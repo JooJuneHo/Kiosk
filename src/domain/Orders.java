@@ -23,12 +23,21 @@ public class Orders {
 
     // 현재 주문번호 리턴
     public int getOrderNumber(){
+        orderNumber++;
         return orderNumber;
     }
 
     // 장바구니 초기화
     public void clearItemList(){
         itemList.clear();
+    }
+
+    public double TotalOrderPrice(List<Burger> itemList){
+        int totalPrice = 0;
+        for(int i=0; i<itemList.size(); i++){
+            totalPrice += itemList.get(i).getPrice();
+        }
+        return totalPrice;
     }
 
 

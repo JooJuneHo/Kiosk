@@ -1,28 +1,53 @@
 package Screendata;
 
+import domain.Burger;
+import domain.Orders;
+
+import java.util.List;
+
 public class OrderScreen {
+    Orders orders = new Orders();
     // 주문 화면 출력
-    public String Order_Selector(){
-        String str = "아래와 같이 주문 하시겠습니까?\n" +
+    public void Order_Selector(List<Burger> itemList){
+        System.out.println("아래와 같이 주문 하시겠습니까?\n" +
                 "\n" +
-                "[ Orders ]\n" +
-                "ShackBurger   | W 6.9 | 토마토, 양상추, 쉑소스가 토핑된 치즈버거\n" +
-                "SmokeShack    | W 8.9 | 베이컨, 체리 페퍼에 쉑소스가 토핑된 치즈버거\n" +
-                "\n" +
-                "[ Total ]\n" +
-                "W 15.8\n" +
-                "\n" +
-                "1. 주문      2. 메뉴판";
-        return str;
+                "[ Orders ]\n");
+        for(Burger item : itemList){
+            System.out.println(item.getName() + "\t| w "
+                    + item.getPrice() + " | "
+                    + item.getDescription()
+            );
+        }
+        System.out.println("[ Total ]\n");
+
+        for(Burger item : itemList){
+            System.out.println("W " + orders.TotalOrderPrice(itemList));
+        }
+
+        System.out.println("\n" + "1. 주문      2. 메뉴판");
+
+
+
+//        String str = "아래와 같이 주문 하시겠습니까?\n" +
+//                "\n" +
+//                "[ Orders ]\n" +
+//                "ShackBurger   | W 6.9 | 토마토, 양상추, 쉑소스가 토핑된 치즈버거\n" +
+//                "SmokeShack    | W 8.9 | 베이컨, 체리 페퍼에 쉑소스가 토핑된 치즈버거\n" +
+//                "\n" +
+//                "[ Total ]\n" +
+//                "W 15.8\n" +
+//                "\n" +
+//                "1. 주문      2. 메뉴판";
+//        return str;
     }
 
     // 주문 완료 화면 출력 3추뒤 초기화면으로 돌아가야함
-    public String CompleteOrder(){
-        String str = "주문이 완료되었습니다!\n" +
+    public void CompleteOrder(int orderNum){
+
+        System.out.printf("주문이 완료되었습니다!\n" +
                 "\n" +
-                "대기번호는 [ 1 ] 번 입니다.\n" +
-                "(3초후 메뉴판으로 돌아갑니다.)";
-        return str;
+                "대기번호는 [ %d ] 번 입니다.\n" +
+                "(3초후 메뉴판으로 돌아갑니다.)\n", orderNum);
     }
 
     public String OrderCancle_Selector(){

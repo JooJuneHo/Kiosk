@@ -23,38 +23,79 @@ public class Kiosk {
 
     Scanner sc = new Scanner(System.in);
 
-    public void ScreenOn(){
-        System.out.println(mainScreen.mainScreen());
-        int selector = sc.nextInt();
+    public void ScreenOn() throws InterruptedException {
+
+        while(true){
+            mainScreen.mainScreen(orders.getItemList());
+            int mainSelector = sc.nextInt();
 
 
-        switch(selector) {
-            case 1 :
-                menuScreen.BurgerMenu(burger);
-                int burgerSelector = sc.nextInt();
-                Burger burger1 = initialize.initBurger().get(burgerSelector-1);
+            switch(mainSelector) {
+                case 1 :
+                    menuScreen.BurgerMenu(burger);
+                    int burgerSelector = sc.nextInt();
+                    Burger burger1 = initialize.initBurger().get(burgerSelector-1);
 
-                // 장바구니에 담기
-                orders.addItem(burger1);
+                    // 장바구니에 담기
+                    orders.addItem(burger1);
+                    // 장바구니 확인 출력
+                    buyScreen.Order_Selector(orders.getItemList());
 
-                buyScreen.Order_Selector(orders.getItemList());
+                    // 장바구니 확인 입력
+                    int buySelector = sc.nextInt();
+
+                    if(buySelector == 1){                  // 장바구니 확인
+                        break;
+                    } else if(buySelector == 2){                // 장바구니 취소
+                        orders.clearItemList();
+                        break;
+                    }
+
+//                    mainSelector = sc.nextInt();
+//                    if(mainSelector == 5){
+//                        orderScreen.Order_Selector(orders.getItemList());
+//                        // 주문 확인 입력
+//                        int orderSelector = sc.nextInt();
+//
+//                        if(orderSelector == 1){
+//                            int orderNum = orders.getOrderNumber();
+//                            orderScreen.CompleteOrder(orderNum);
+//                        } else if(orderSelector == 2){
+//                            break;
+//                        }
+//
+//                    }
+
+                    break;
 
 
-                break;
-            case 2 :
-                System.out.println(menuScreen.CustardMenu());
-                break;
-            case 3 :
-                System.out.println(menuScreen.DrinksMenu());
-                break;
-            case 4 :
-                System.out.println(menuScreen.ChickenMenu());
-                break;
-            case 5 :
-                System.out.println(orderScreen.Order_Selector());
-                break;
-            case 6 :
-                System.out.println(orderScreen.OrderCancle_Selector());
+                case 2 :
+                    menuScreen.CustardMenu();
+                    break;
+                case 3 :
+                    menuScreen.DrinksMenu();
+                    break;
+                case 4 :
+                    menuScreen.ChickenMenu();
+                    break;
+                case 5 :
+                    orderScreen.Order_Selector(orders.getItemList());
+                    // 주문 확인 입력
+                    int orderSelector = sc.nextInt();
+
+                    if(orderSelector == 1){
+                        int orderNum = orders.getOrderNumber();
+                        orderScreen.CompleteOrder(orderNum);
+                        Thread.sleep(3000);
+                    } else if(orderSelector == 2){
+                        break;
+                    }
+                    break;
+                case 6 :
+                    orderScreen.OrderCancle_Selector();
+            }
         }
+
+
     }
 }
