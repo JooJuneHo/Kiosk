@@ -28,7 +28,9 @@ public class Kiosk {
         while(true){
             mainScreen.mainScreen(orders.getItemList());
             int mainSelector = sc.nextInt();
-
+            if(mainSelector<1 && mainSelector >6){
+                System.out.println("잘못된 입력값 입니다.");
+            }
 
             switch(mainSelector) {
                 case 1 :
@@ -50,21 +52,6 @@ public class Kiosk {
                         orders.clearItemList();
                         break;
                     }
-
-//                    mainSelector = sc.nextInt();
-//                    if(mainSelector == 5){
-//                        orderScreen.Order_Selector(orders.getItemList());
-//                        // 주문 확인 입력
-//                        int orderSelector = sc.nextInt();
-//
-//                        if(orderSelector == 1){
-//                            int orderNum = orders.getOrderNumber();
-//                            orderScreen.CompleteOrder(orderNum);
-//                        } else if(orderSelector == 2){
-//                            break;
-//                        }
-//
-//                    }
 
                     break;
 
@@ -93,6 +80,15 @@ public class Kiosk {
                     break;
                 case 6 :
                     orderScreen.OrderCancle_Selector();
+                    int cancleSelector = sc.nextInt();
+
+                    if(cancleSelector == 1){
+                        orders.clearItemList();
+                        System.out.println("진행하던 주문이 취소되었습니다.");
+                        break;
+                    } else if (cancleSelector == 2){
+                        break;
+                    }
             }
         }
 

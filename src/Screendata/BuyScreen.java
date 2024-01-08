@@ -9,7 +9,7 @@ public class BuyScreen {
     public void Order_Selector (List<Burger> itemList){
         for(Burger item : itemList) {
             System.out.println(item.getName() + "\t| w"
-                    + item.getPrice() + "| "
+                    + item.getPrice() + " | "
                     + item.getDescription()
             );
         }

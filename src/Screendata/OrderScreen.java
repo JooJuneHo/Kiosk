@@ -20,9 +20,9 @@ public class OrderScreen {
         }
         System.out.println("[ Total ]\n");
 
-        for(Burger item : itemList){
-            System.out.println("W " + orders.TotalOrderPrice(itemList));
-        }
+
+        System.out.println("W " + orders.TotalOrderPrice(itemList));
+
 
         System.out.println("\n" + "1. 주문      2. 메뉴판");
 
@@ -50,13 +50,15 @@ public class OrderScreen {
                 "(3초후 메뉴판으로 돌아갑니다.)\n", orderNum);
     }
 
-    public String OrderCancle_Selector(){
-        String str = "진행하던 주문을 취소하시겠습니까?\n" +
-                "1. 확인        2. 취소";
-        return str;
+    public void OrderCancle_Selector(){
+        System.out.println("진행하던 주문을 취소하시겠습니까?\n" +
+                "1. 확인        2. 취소");
+
+//        String str = "진행하던 주문을 취소하시겠습니까?\n" +
+//                "1. 확인        2. 취소";
     }
 
-    public String OrderCancle(){
+    public void OrderCancle(){
         String str = "진행하던 주문이 취소되었습니다.\n" +
                 "\n" +
                 "\"SHAKESHACK BURGER 에 오신걸 환영합니다.\"\n" +
@@ -71,6 +73,6 @@ public class OrderScreen {
                 "[ ORDER MENU ]\n" +
                 "5. Order       | 장바구니를 확인 후 주문합니다.\n" +
                 "6. Cancel      | 진행중인 주문을 취소합니다.";
-        return str;
+
     }
 }

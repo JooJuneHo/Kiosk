@@ -33,7 +33,7 @@ public class Orders {
     }
 
     public double TotalOrderPrice(List<Burger> itemList){
-        int totalPrice = 0;
+        double totalPrice = 0;
         for(int i=0; i<itemList.size(); i++){
             totalPrice += itemList.get(i).getPrice();
         }
