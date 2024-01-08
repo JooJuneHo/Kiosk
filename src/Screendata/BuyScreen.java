@@ -1,17 +1,25 @@
 package Screendata;
 
+import domain.Burger;
+
+import java.util.List;
+
 public class BuyScreen {
 
-//    private Burger burger;
-//
-//    public String Order_Selector (int number){
-//        String str = ""+item.getBurgerName(number) + " | W " + burger.getBurgerPrice(number) + " | " + burger.getBurgerDesciption(number) + "\"\n" +
-//                "위 메뉴를 장바구니에 추가하시겠습니까?\n" +
-//                "1. 확인        2. 취소";
-//        return str;
-//    }
-//
-//    public String Order (int number){
+    public void Order_Selector (List<Burger> itemList){
+        int i=1;
+        for(Burger item : itemList) {
+            System.out.println(item.getName() + "\t| w"
+                    + item.getPrice() + "| "
+                    + item.getDescription()
+            );
+            i++;
+        }
+        System.out.println("위 메뉴를 장바구니에 추가하시겠습니까?\n");
+        System.out.println("1. 확인        2. 취소");
+    }
+
+    public void Order (List<Burger> itemList){
 //        String str = burger.getBurgerName(number) + " 가 장바구니에 추가되었습니다.\n" +
 //                "\n" +
 //                "\"SHAKESHACK BURGER 에 오신걸 환영합니다.\"\n" +
@@ -26,6 +34,5 @@ public class BuyScreen {
 //                "[ ORDER MENU ]\n" +
 //                "5. Order       | 장바구니를 확인 후 주문합니다.\n" +
 //                "6. Cancel      | 진행중인 주문을 취소합니다.";
-//        return str;
-//    }
+    }
 }

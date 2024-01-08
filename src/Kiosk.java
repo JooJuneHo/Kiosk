@@ -32,15 +32,12 @@ public class Kiosk {
             case 1 :
                 menuScreen.BurgerMenu(burger);
                 int burgerSelector = sc.nextInt();
-                Burger burger = initialize.initBurger().get(burgerSelector-1);
-                System.out.println(burger);
-//                burger1.getName();
-//                System.out.println(burger1.getPrice());
-//                burger1.getDescription();
-                // 장바구니에 담기
-                orders.addItem(burger);
+                Burger burger1 = initialize.initBurger().get(burgerSelector-1);
 
-                System.out.println(orders.getItemList());
+                // 장바구니에 담기
+                orders.addItem(burger1);
+
+                buyScreen.Order_Selector(orders.getItemList());
 
 
                 break;
