@@ -4,6 +4,7 @@ import Screendata.MenuScreen;
 import Screendata.OrderScreen;
 import data.Initialize;
 import domain.Burger;
+import domain.Item;
 import domain.Orders;
 
 import java.util.List;
@@ -17,7 +18,7 @@ public class Kiosk {
 
     // 메뉴 초기화
     Initialize initialize = new Initialize();
-    List<Burger> burger = initialize.initBurger();
+    List<Burger> burgerList = initialize.initBurger();
 
     Orders orders = new Orders();
 
@@ -28,18 +29,18 @@ public class Kiosk {
         while(true){
             mainScreen.mainScreen(orders.getItemList());
             int mainSelector = sc.nextInt();
-            if(mainSelector<1 && mainSelector >6){
+            if(mainSelector<1 || mainSelector >6){
                 System.out.println("잘못된 입력값 입니다.");
             }
 
             switch(mainSelector) {
                 case 1 :
-                    menuScreen.BurgerMenu(burger);
+                    menuScreen.BurgerMenu(burgerList);
                     int burgerSelector = sc.nextInt();
-                    Burger burger1 = initialize.initBurger().get(burgerSelector-1);
+                    Burger burger = initialize.initBurger().get(burgerSelector-1);
 
                     // 장바구니에 담기
-                    orders.addItem(burger1);
+                    orders.addItem(burger);
                     // 장바구니 확인 출력
                     buyScreen.Order_Selector(orders.getItemList());
 
@@ -52,7 +53,6 @@ public class Kiosk {
                         orders.clearItemList();
                         break;
                     }
-
                     break;
 
 

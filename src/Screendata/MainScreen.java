@@ -6,10 +6,13 @@ import java.util.List;
 
 public class MainScreen {
     public void mainScreen (List<Burger> itemList){
-        for(Burger item : itemList) {
-            System.out.println(item.getName() + " 가 장바구니에 추가되었습니다."
-            );
+        if(!itemList.isEmpty()){
+            for(Burger item : itemList) {
+                System.out.println(item.getName() + " 가 장바구니에 추가되었습니다."
+                );
+            }
         }
+
         System.out.println("\"SHAKESHACK BURGER 에 오신걸 환영합니다.\"\n" +
                 "아래 메뉴판을 보시고 메뉴를 골라 입력해주세요.\n" +
                 "\n" +
