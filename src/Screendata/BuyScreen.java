@@ -1,13 +1,13 @@
 package Screendata;
 
-import domain.Burger;
+import domain.Item;
 
 import java.util.List;
 
 public class BuyScreen {
 
-    public void Order_Selector (List<Burger> itemList){
-        for(Burger item : itemList) {
+    public void Order_Selector (List<Item> itemList){
+        for(Item item : itemList) {
             System.out.println(item.getName() + "\t| w"
                     + item.getPrice() + " | "
                     + item.getDescription()

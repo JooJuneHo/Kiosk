@@ -10,6 +10,7 @@ public class Item extends Menu{
         this.price = price;
     }
 
+
     public int getQuantity(){
         return quantity;
     }
@@ -18,18 +19,8 @@ public class Item extends Menu{
         return price;
     }
 
-    @Override
-    public String toString() {
-        return getName() + "\t| W "
-                + price + " | "
-                + quantity + "개 | "
-                + getDescription();
-    }
-    public String printItem() {
-        return getName() + "\t| W "
-                + price + " | "
-                + getDescription();
-    }
+
+
     public void orderItem(){
         quantity++;
     }

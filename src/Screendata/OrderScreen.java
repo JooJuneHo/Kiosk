@@ -1,6 +1,6 @@
 package Screendata;
 
-import domain.Burger;
+import domain.Item;
 import domain.Orders;
 
 import java.util.List;
@@ -8,11 +8,11 @@ import java.util.List;
 public class OrderScreen {
     Orders orders = new Orders();
     // 주문 화면 출력
-    public void Order_Selector(List<Burger> itemList){
+    public void Order_Selector(List<Item> itemList){
         System.out.println("아래와 같이 주문 하시겠습니까?\n" +
                 "\n" +
                 "[ Orders ]\n");
-        for(Burger item : itemList){
+        for(Item item : itemList){
             System.out.println(item.getName() + "\t| w "
                     + item.getPrice() + " | "
                     + item.getDescription()

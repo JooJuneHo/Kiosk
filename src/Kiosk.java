@@ -3,7 +3,6 @@ import Screendata.MainScreen;
 import Screendata.MenuScreen;
 import Screendata.OrderScreen;
 import data.Initialize;
-import domain.Burger;
 import domain.Item;
 import domain.Orders;
 
@@ -18,7 +17,8 @@ public class Kiosk {
 
     // 메뉴 초기화
     Initialize initialize = new Initialize();
-    List<Burger> burgerList = initialize.initBurger();
+    List<Item> itemList = initialize.initBurger();
+//    List<Item> itemList =  initialize.
 
     Orders orders = new Orders();
 
@@ -35,9 +35,9 @@ public class Kiosk {
 
             switch(mainSelector) {
                 case 1 :
-                    menuScreen.BurgerMenu(burgerList);
+                    menuScreen.BurgerMenu(itemList);
                     int burgerSelector = sc.nextInt();
-                    Burger burger = initialize.initBurger().get(burgerSelector-1);
+                    Item burger = initialize.initBurger().get(burgerSelector-1);
 
                     // 장바구니에 담기
                     orders.addItem(burger);

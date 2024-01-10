@@ -1,18 +1,17 @@
 package Screendata;
 
-import domain.Burger;
 import domain.Item;
 
 import java.util.List;
 
 public class MenuScreen {
-    public void BurgerMenu(List<Burger> itemList){
+    public void BurgerMenu(List<Item> itemList){
         System.out.println(" \"SHAKESHACK BURGER 에 오신걸 환영합니다.\"\n" +
                 "아래 상품메뉴판을 보시고 상품을 골라 입력해주세요.\n" +
                 "\n" +
                 "[ Burgers MENU ]\n");
         int i=1;
-        for(Burger item : itemList) {
+        for(Item item : itemList) {
             System.out.println(i + ". " + item.getName() + "\t| w"
                     + item.getPrice() + " | "
                     + item.getDescription()

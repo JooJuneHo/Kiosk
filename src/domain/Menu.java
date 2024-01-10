@@ -22,8 +22,8 @@ public class Menu {
     }
 
 
-    public String toString() {
-        return name + "\t\t\t| "+
-                description;
-    }
+//    public String toString() {
+//        return name + "\t\t\t| "+
+//                description;
+//    }
 }

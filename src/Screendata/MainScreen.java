@@ -1,13 +1,13 @@
 package Screendata;
 
-import domain.Burger;
+import domain.Item;
 
 import java.util.List;
 
 public class MainScreen {
-    public void mainScreen (List<Burger> itemList){
+    public void mainScreen (List<Item> itemList){
         if(!itemList.isEmpty()){
-            for(Burger item : itemList) {
+            for(Item item : itemList) {
                 System.out.println(item.getName() + " 가 장바구니에 추가되었습니다."
                 );
             }
