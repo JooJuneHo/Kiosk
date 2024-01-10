@@ -10,7 +10,7 @@ public class MenuScreen {
                 "아래 상품메뉴판을 보시고 상품을 골라 입력해주세요.\n" +
                 "\n" +
                 "[ Burgers MENU ]\n");
-        int i=1;
+        int i = 1; // 변수명 잘알아들을수 있도록 정하기!!
         for(Item item : itemList) {
             System.out.println(i + ". " + item.getName() + "\t| w"
                     + item.getPrice() + " | "
@@ -26,7 +26,7 @@ public class MenuScreen {
                 "아래 상품메뉴판을 보시고 상품을 골라 입력해주세요.\n" +
                 "\n" +
                 "[ Custard MENU ]\n");
-        int i=1;
+        int i = 1;
         for(Item item : itemList){
             System.out.println(i + ". " + item.getName() + "\t| w"
                     + item.getPrice() + " | "

@@ -3,7 +3,7 @@ package domain;
 public class Item extends Menu{
 
     private double price;
-    private int quantity;
+//    private int quantity;
 
     public Item(String name, String comment, double price) {
         super(name, comment);
@@ -11,9 +11,9 @@ public class Item extends Menu{
     }
 
 
-    public int getQuantity(){
-        return quantity;
-    }
+//    public int getQuantity(){
+//        return quantity;
+//    }
 
     public double getPrice() {
         return price;
@@ -21,12 +21,12 @@ public class Item extends Menu{
 
 
 
-    public void orderItem(){
-        quantity++;
-    }
-    public void clearQuantityItem(){
-        this.quantity = 0;
-    }
+//    public void orderItem(){
+//        quantity++;
+//    }
+//    public void clearQuantityItem(){
+//        this.quantity = 0;
+//    }
 
 
 }
