@@ -40,7 +40,7 @@ public class Kiosk {
 
             switch(mainSelector) {
                 case 1 :
-                    menuScreen.BurgerMenu(burgerList);
+                    menuScreen.Menu(burgerList);
                     int burgerSelector = sc.nextInt();
                     Item burger = burgerList.get(burgerSelector-1);
 
@@ -62,7 +62,7 @@ public class Kiosk {
 
 
                 case 2 :
-                    menuScreen.CustardMenu(custardList);
+                    menuScreen.Menu(custardList);
                     int custardSelector = sc.nextInt();
                     Item custard = custardList.get(custardSelector-1);
 
@@ -82,7 +82,7 @@ public class Kiosk {
                     }
                     break;
                 case 3 :
-                    menuScreen.DrinksMenu(drinksList);
+                    menuScreen.Menu(drinksList);
                     int drinksSelector = sc.nextInt();
                     Item drinks = drinksList.get(drinksSelector-1);
 
@@ -102,7 +102,7 @@ public class Kiosk {
                     }
                     break;
                 case 4 :
-                    menuScreen.ChickenMenu(chickenList);
+                    menuScreen.Menu(chickenList);
                     int chickenSelector = sc.nextInt();
                     Item chicken = chickenList.get(chickenSelector-1);
 
